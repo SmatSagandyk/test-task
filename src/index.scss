@@ -1,0 +1,118 @@
+:root {
+  --main-color: #202c33;
+  --white-color: #d1d7db;
+  --bg-color: #0b141a;
+  --box-shadow: 0 5px 20px #0b141a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-color);
+}
+
+code {
+  font-family: "Rubik", sans-serif;
+}
+
+main {
+  position: relative;
+  height: 100vh;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./images/bg.png") repeat;
+    opacity: 0.06;
+    z-index: 0;
+  }
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  margin: auto;
+}
+
+.title {
+  font-size: 26px;
+  color: var(--white-color);
+  font-weight: 600;
+  margin: 0;
+
+  &.mobile {
+    font-size: 16px;
+  }
+}
+.text {
+  font-size: 16px;
+  color: var(--white-color);
+  font-weight: 400;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: var(--bg-color);
+  // border: 3px solid var(--bg-color);
+  border-radius: 2px;
+}
+
+.anim-open {
+  animation: open 0.1s forwards;
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.anim-open-modal {
+  animation: openModal 0.1s forwards;
+}
+
+@keyframes openModal {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

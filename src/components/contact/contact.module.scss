@@ -1,0 +1,51 @@
+.button {
+    display: block;
+}
+.link {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    // margin: 1px 0;
+    text-align: center;
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.1s, transform 0.1s;
+
+    // .link__name
+    &__name {
+        display: block;
+        font-size: 16px;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: lighten(#202c33, 3);
+        }
+    }
+
+    &.active {
+        background-color: lighten(#202c33, 3);
+    }
+
+    &:active,
+    &:target {
+        transform: scale(0.95);
+    }
+    &::before,
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 20px;
+        right: 20px;
+        width: calc(100% - 40px);
+        height: 1px;
+        background-color: lighten(#202c33, 3);
+    }
+
+    &::before {
+        bottom: unset;
+        top: 0;
+    }
+}

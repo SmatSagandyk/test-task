@@ -1,0 +1,23 @@
+.section {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+.inner {
+    position: relative;
+    background: var(--main-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 12px;
+    width: 500px;
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+.link {
+    color: var(--bg-color);
+}

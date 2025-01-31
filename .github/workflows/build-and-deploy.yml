@@ -1,0 +1,21 @@
+name: Build and Deploy
+on:
+    push:
+        branches: ["main"]
+permissions:
+    contents: write
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout 🛎️
+              uses: actions/checkout@v3
+
+            - name: Install and Build 🔧 # Этот пример проекта собирается с помощью npm и выводит результат в папку 'build'. Замените его командами, необходимыми для сборки вашего проекта, или полностью удалите этот шаг, если ваш сайт предварительно собран.
+              run: |
+                  npm install
+                  npm run build
+            - name: Deploy 🚀
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  folder: build # Папка, в которую должно быть развернуто действие.
